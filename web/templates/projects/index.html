@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% for p in projects %}
+  <h1> -> {{ p.name }}</h1>
+  <a href="{% url 'project_by_id' id=p.id %}">
+    show
+  </a>
+{% endfor %}
+{% endblock %}

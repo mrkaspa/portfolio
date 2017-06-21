@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Contact us</h1>
+
+{% if form.errors %}
+  <p>
+    Errors: {{ form.errors|pluralize}}
+  </p>
+{% endif %}
+
+<form action="/contact/save" method="post">
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  {% csrf_token %}
+  <input type="submit" name="GO" value="GO">
+</form>
+{% endblock %}
